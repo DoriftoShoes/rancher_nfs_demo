@@ -1,0 +1,23 @@
+apiVersion: openebs.io/v1alpha1
+kind: StoragePoolClaim
+metadata:
+  name: nfs-disk
+spec:
+  name: nfs-disk
+  type: disk
+  poolSpec:
+    poolType: striped
+  # NOTE - Appropriate disks need to be fetched using `kubectl get disks`
+  #
+  # `Disk` is a custom resource supported by OpenEBS with `node-disk-manager`
+  # as the disk operator
+# Replace the following with actual disk CRs from your cluster `kubectl get disks`
+# Uncomment the below lines after updating the actual disk names.
+  disks:
+    diskList:
+      - disk-1637ab33cb68f25946292a59c5c83bd7
+      - disk-5c9341e3b80ea526dac74c3963133055
+      - disk-61707a740265f0f47461234140615741
+      - disk-6d98faa3709db8411383dff483fbd84e
+      - disk-729a64e8ddf3b45ea4bc090b432c4d26
+      - disk-e8e825742b1f496728d429bf05ad0cd1
